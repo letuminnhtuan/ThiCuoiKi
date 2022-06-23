@@ -61,5 +61,16 @@ namespace _102200292_LeTuMinhTuan.BLL
             }
             return data;
         }
+        public void AddSV(SinhVien data)
+        {
+            tSinhVien sv = new tSinhVien
+            {
+                MaSinhVien = data.MaSinhVien,
+                TenSinhVien = data.TenSinhVien,
+                GioiTinh = data.GioiTinh,
+                LopSinhHoat = data.LopSinhHoat,
+            };
+            tSV_HP
+        }
     }
 }

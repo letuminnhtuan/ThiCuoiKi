@@ -18,10 +18,10 @@ namespace _102200292_LeTuMinhTuan.DAL
             context.HocPhans.Add(new tHocPhan { MaHocPhan = "MMT", TenHocPhan = "Mang may tinh" });
             context.HocPhans.Add(new tHocPhan { MaHocPhan = "CNPM", TenHocPhan = "Cong nghe phan mem" });
 
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "102", TenSinhVien = "Nguyen Van A", GioiTinh = true});
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "103", TenSinhVien = "Nguyen Van B", GioiTinh = false);
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "104", TenSinhVien = "Tran Van A", GioiTinh = true});
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "105", TenSinhVien = "Tran Van B", GioiTinh = true});
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "102", TenSinhVien = "Nguyen Van A", GioiTinh = true, LopSinhHoat = "19T" });
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "103", TenSinhVien = "Nguyen Van B", GioiTinh = false, LopSinhHoat = "20T" });
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "104", TenSinhVien = "Tran Van A", GioiTinh = true, LopSinhHoat = "20T" });
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "105", TenSinhVien = "Tran Van B", GioiTinh = true, LopSinhHoat = "20T"});
 
             context.SV_HPs.Add(new tSV_HP { MaHocPhan = "JV", MaSinhVien = "102", DiemBaiTap = 7, DiemGiuaKi = 7, DiemCuoiKi = 7, NgayThi = new DateTime(2022, 6, 22) });
             context.SV_HPs.Add(new tSV_HP { MaHocPhan = "JV", MaSinhVien = "103", DiemBaiTap = 7, DiemGiuaKi = 5, DiemCuoiKi = 8, NgayThi = new DateTime(2022, 6, 12) });
