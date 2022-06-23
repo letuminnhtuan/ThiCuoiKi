@@ -19,10 +19,14 @@ namespace _102200292_LeTuMinhTuan.DAL
         public double DiemBaiTap { get; set; }
         public double DiemGiuaKi { get; set; }
         public double DiemCuoiKi { get; set; }
-        public DateTime NgayThi { get; set; }
+        public DateTime NgayThi { get; set; }        
         public string MaHocPhan { get; set; }
-        
-        [ForeignKey("MaHocPhan")]
-        public virtual tHocPhan HocPhan { get; set; }
+
+        public tSinhVien()
+        {
+            this.HocPhans = new HashSet<tHocPhan>();
+        }
+  
+        public virtual ICollection<tHocPhan> HocPhans { get; set; }
     }
 }
