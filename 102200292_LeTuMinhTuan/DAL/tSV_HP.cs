@@ -11,7 +11,7 @@ namespace _102200292_LeTuMinhTuan.DAL
     [Table("SV_HP")]
     public class tSV_HP
     {
-        [Key]
+        [Key][DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         public string MaHocPhan { get; set; }
         public string MaSinhVien { get; set; }

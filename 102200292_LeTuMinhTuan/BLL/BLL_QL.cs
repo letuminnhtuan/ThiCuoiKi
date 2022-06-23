@@ -107,7 +107,7 @@ namespace _102200292_LeTuMinhTuan.BLL
                 DiemCuoiKi = data.DiemCuoiKi,
                 NgayThi = data.NgayThi,
             };
-            db.SinhViens.Add(sv);
+            if(db.SinhViens.Find(data.MaSinhVien) == null) db.SinhViens.Add(sv);
             db.SV_HPs.Add(sv_hp);
             db.SaveChanges();
         }
@@ -117,12 +117,16 @@ namespace _102200292_LeTuMinhTuan.BLL
             SV.TenSinhVien = data.TenSinhVien;
             SV.GioiTinh = data.GioiTinh;
             SV.LopSinhHoat = data.LopSinhHoat;
+            db.SaveChanges();
             var SV_HP = db.SV_HPs.Where(p => p.MaSinhVien.Equals(data.MaSinhVien) && p.MaHocPhan.Equals(data.MaHocPhan)).FirstOrDefault();
-            SV_HP.DiemBaiTap = data.DiemBaiTap;
-            SV_HP.DiemGiuaKi = data.DiemGiuaKi;
-            SV_HP.DiemCuoiKi = data.DiemCuoiKi;
-            SV_HP.NgayThi = data.NgayThi;
-            SV_HP.MaHocPhan = data.MaHocPhan;
+            if(SV_HP != null)
+            {
+                SV_HP.DiemBaiTap = data.DiemBaiTap;
+                SV_HP.DiemGiuaKi = data.DiemGiuaKi;
+                SV_HP.DiemCuoiKi = data.DiemCuoiKi;
+                SV_HP.NgayThi = data.NgayThi;
+                SV_HP.MaHocPhan = data.MaHocPhan;
+            }
             db.SaveChanges();
         }
         public void DeleteSV(string MaSinhVien, string MaHocPhan)
