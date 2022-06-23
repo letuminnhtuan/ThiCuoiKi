@@ -127,7 +127,16 @@ namespace _102200292_LeTuMinhTuan.BLL
         }
         public void DeleteSV(string MaSinhVien, string MaHocPhan)
         {
-
+            var s = db.SV_HPs.Where(p => p.MaSinhVien.Equals(MaSinhVien) && p.MaHocPhan.Equals(MaHocPhan)).FirstOrDefault();
+            db.SV_HPs.Remove(s);
+            db.SaveChanges();
+        }
+        public List<SinhVien> SortDSSV(string txtSort, string MaHocPhan, string txtSearch)
+        {
+            List<SinhVien> SinhViens = GetDSSV(MaHocPhan, txtSearch);
+            if (txtSort.Equals("Diem tong ket")) SinhViens.Sort(delegate (SinhVien sv1, SinhVien sv2) { return sv1.TongKet.CompareTo(sv2.TongKet); });
+            else if(txtSort.Equals("TenSV")) SinhViens.Sort(delegate (SinhVien sv1, SinhVien sv2) { return sv1.TenSinhVien.CompareTo(sv2.TenSinhVien); });
+            return SinhViens;
         }
     }
 }

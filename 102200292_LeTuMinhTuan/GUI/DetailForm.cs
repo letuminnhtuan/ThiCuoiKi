@@ -67,8 +67,8 @@ namespace _102200292_LeTuMinhTuan.GUI
                 DiemGiuaKi = Convert.ToDouble(this.txtDiemGK.Text),
                 DiemCuoiKi = Convert.ToDouble(this.txtDiemCK.Text),
                 NgayThi = this.dateTimePicker1.Value,
-                TongKet = Convert.ToDouble(this.txtTongKet.Text),
             };
+            sv.TongKet = sv.DiemBaiTap * 0.2 + sv.DiemGiuaKi * 0.2 + sv.DiemCuoiKi * 0.3;
             BLL_QL.Instance.AddUpdateSV(sv);
             d();
         }
@@ -76,6 +76,17 @@ namespace _102200292_LeTuMinhTuan.GUI
         private void btnCancle_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+        private void NhapDiem(object o, EventArgs e)
+        {
+            if(this.txtDiemBT.Text != "" && this.txtDiemGK.Text != "" && this.txtDiemCK.Text != "")
+            {
+                double DiemBaiTap = Convert.ToDouble(this.txtDiemBT.Text);
+                double DiemGiuaKi = Convert.ToDouble(this.txtDiemGK.Text);
+                double DiemCuoiKi = Convert.ToDouble(this.txtDiemCK.Text);
+                double TongKet = DiemBaiTap * 0.2 + DiemGiuaKi * 0.2 + DiemCuoiKi * 0.3;
+                this.txtTongKet.Text = TongKet.ToString();
+            }
         }
     }
 }

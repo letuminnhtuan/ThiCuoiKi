@@ -193,6 +193,7 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.txtDiemBT.Name = "txtDiemBT";
             this.txtDiemBT.Size = new System.Drawing.Size(306, 28);
             this.txtDiemBT.TabIndex = 11;
+            this.txtDiemBT.TextChanged += new System.EventHandler(this.NhapDiem);
             // 
             // txtDiemGK
             // 
@@ -201,6 +202,7 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.txtDiemGK.Name = "txtDiemGK";
             this.txtDiemGK.Size = new System.Drawing.Size(306, 28);
             this.txtDiemGK.TabIndex = 12;
+            this.txtDiemGK.TextChanged += new System.EventHandler(this.NhapDiem);
             // 
             // txtDiemCK
             // 
@@ -209,6 +211,7 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.txtDiemCK.Name = "txtDiemCK";
             this.txtDiemCK.Size = new System.Drawing.Size(306, 28);
             this.txtDiemCK.TabIndex = 13;
+            this.txtDiemCK.TextChanged += new System.EventHandler(this.NhapDiem);
             // 
             // txtTongKet
             // 

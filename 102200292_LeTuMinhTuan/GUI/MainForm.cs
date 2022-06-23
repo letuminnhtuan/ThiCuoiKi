@@ -58,5 +58,31 @@ namespace _102200292_LeTuMinhTuan.GUI
                 f.Show();
             }
         }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (this.dataSV.SelectedRows.Count == 1)
+            {
+                string MaSinhVien = this.dataSV.SelectedRows[0].Cells["colIDSV"].Value.ToString();
+                string MaHocPhan = this.dataSV.SelectedRows[0].Cells["colIDHP"].Value.ToString();
+                BLL_QL.Instance.DeleteSV(MaSinhVien, MaHocPhan);
+                LoadData();
+            }
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            if(this.cbbSort.SelectedIndex >= 0)
+            {
+                this.dataSV.Rows.Clear();
+                string txtSort = this.cbbSort.Text;
+                string MaHocPhan = ((CBBItem)this.cbbHocPhan.SelectedItem).Key;
+                string txtSearch = this.txtSearch.Text;
+                foreach (SinhVien i in BLL_QL.Instance.SortDSSV(txtSort, MaHocPhan, txtSearch))
+                {
+                    this.dataSV.Rows.Add(i.MaSinhVien, i.MaHocPhan, i.TenSinhVien, i.LopSinhHoat, i.TenHocPhan, i.DiemBaiTap, i.DiemGiuaKi, i.DiemCuoiKi, i.TongKet, i.NgayThi);
+                }
+            }
+        }
     }
 }

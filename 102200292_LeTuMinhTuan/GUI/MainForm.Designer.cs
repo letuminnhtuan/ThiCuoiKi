@@ -133,6 +133,7 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.btnSort.TabIndex = 6;
             this.btnSort.Text = "Sort";
             this.btnSort.UseVisualStyleBackColor = true;
+            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
             // 
             // btnDel
             // 
@@ -143,6 +144,7 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.btnDel.TabIndex = 7;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnUpdate
             // 
@@ -159,6 +161,9 @@ namespace _102200292_LeTuMinhTuan.GUI
             // 
             this.cbbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSort.FormattingEnabled = true;
+            this.cbbSort.Items.AddRange(new object[] {
+            "Ten SV",
+            "Diem tong ket"});
             this.cbbSort.Location = new System.Drawing.Point(882, 391);
             this.cbbSort.Name = "cbbSort";
             this.cbbSort.Size = new System.Drawing.Size(221, 30);
@@ -242,7 +247,7 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbbHocPhan);
             this.Name = "MainForm";
-            this.Text = "fMain";
+            this.Text = "MainForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataSV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
