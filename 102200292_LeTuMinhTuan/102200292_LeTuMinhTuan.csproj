@@ -58,6 +58,7 @@
     <Compile Include="BLL\BLL_QL.cs" />
     <Compile Include="DAL\CreateDB.cs" />
     <Compile Include="DAL\QLSV.cs" />
+    <Compile Include="DAL\tSV_HP.cs" />
     <Compile Include="DAL\tHocPhan.cs" />
     <Compile Include="DAL\tSinhVien.cs" />
     <Compile Include="DTO\CBBItem.cs" />

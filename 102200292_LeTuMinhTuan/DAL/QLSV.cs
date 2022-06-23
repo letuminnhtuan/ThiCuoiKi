@@ -20,6 +20,7 @@ namespace _102200292_LeTuMinhTuan.DAL
 
         public virtual DbSet<tHocPhan> HocPhans { get; set; }
         public virtual DbSet<tSinhVien> SinhViens { get; set; }
+        public virtual DbSet<tSV_HP> SV_HPs { get; set; }
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 

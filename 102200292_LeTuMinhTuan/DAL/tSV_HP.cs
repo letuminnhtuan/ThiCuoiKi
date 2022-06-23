@@ -8,18 +8,16 @@ using System.Threading.Tasks;
 
 namespace _102200292_LeTuMinhTuan.DAL
 {
-    [Table("HocPhan")]
-    public class tHocPhan
+    [Table("SV_HP")]
+    public class tSV_HP
     {
         [Key]
+        public int ID { get; set; }
         public string MaHocPhan { get; set; }
-        public string TenHocPhan { get; set; }
-
-        public tHocPhan()
-        {
-            this.SV_HPs = new HashSet<tSV_HP>();
-        }
-
-        public virtual ICollection<tSV_HP> SV_HPs { get; set; }
+        public string MaSinhVien { get; set; }
+        [ForeignKey("MaSinhVien")]
+        public virtual tSinhVien SinhVien { get; set; }
+        [ForeignKey("MaHocPhan")]
+        public virtual tHocPhan HocPhan { get; set; }
     }
 }

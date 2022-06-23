@@ -18,10 +18,10 @@ namespace _102200292_LeTuMinhTuan.DAL
             context.HocPhans.Add(new tHocPhan { MaHocPhan = "MMT", TenHocPhan = "Mang may tinh" });
             context.HocPhans.Add(new tHocPhan { MaHocPhan = "CNPM", TenHocPhan = "Cong nghe phan mem" });
 
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "102", TenSinhVien = "Nguyen Van A", GioiTinh = true, DiemBaiTap = 7, DiemGiuaKi = 7, DiemCuoiKi = 7, LopSinhHoat = "20T", MaHocPhan = "JV", NgayThi = new DateTime(2022, 6, 22)});
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "103", TenSinhVien = "Nguyen Van B", GioiTinh = false, DiemBaiTap = 7, DiemGiuaKi = 5, DiemCuoiKi = 8, LopSinhHoat = "20T", MaHocPhan = "NET", NgayThi = new DateTime(2022, 6, 12) });
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "104", TenSinhVien = "Tran Van A", GioiTinh = true, DiemBaiTap = 6, DiemGiuaKi = 8, DiemCuoiKi = 7, LopSinhHoat = "19T", MaHocPhan = "TRR", NgayThi = new DateTime(2022, 6, 3) });
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "105", TenSinhVien = "Tran Van B", GioiTinh = true, DiemBaiTap = 8, DiemGiuaKi = 9, DiemCuoiKi = 10, LopSinhHoat = "18T", MaHocPhan = "XSTK", NgayThi = new DateTime(2022, 5, 5) });
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "102", TenSinhVien = "Nguyen Van A", GioiTinh = true, DiemBaiTap = 7, DiemGiuaKi = 7, DiemCuoiKi = 7, LopSinhHoat = "20T", NgayThi = new DateTime(2022, 6, 22)});
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "103", TenSinhVien = "Nguyen Van B", GioiTinh = false, DiemBaiTap = 7, DiemGiuaKi = 5, DiemCuoiKi = 8, LopSinhHoat = "20T", NgayThi = new DateTime(2022, 6, 12) });
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "104", TenSinhVien = "Tran Van A", GioiTinh = true, DiemBaiTap = 6, DiemGiuaKi = 8, DiemCuoiKi = 7, LopSinhHoat = "19T", NgayThi = new DateTime(2022, 6, 3) });
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "105", TenSinhVien = "Tran Van B", GioiTinh = true, DiemBaiTap = 8, DiemGiuaKi = 9, DiemCuoiKi = 10, LopSinhHoat = "18T", NgayThi = new DateTime(2022, 5, 5) });
         }
     }
 }

@@ -19,14 +19,13 @@ namespace _102200292_LeTuMinhTuan.DAL
         public double DiemBaiTap { get; set; }
         public double DiemGiuaKi { get; set; }
         public double DiemCuoiKi { get; set; }
-        public DateTime NgayThi { get; set; }        
-        public string MaHocPhan { get; set; }
+        public DateTime NgayThi { get; set; }
 
         public tSinhVien()
         {
-            this.HocPhans = new HashSet<tHocPhan>();
+            this.SV_HPs = new HashSet<tSV_HP>();
         }
   
-        public virtual ICollection<tHocPhan> HocPhans { get; set; }
+        public virtual ICollection<tSV_HP> SV_HPs { get; set; }
     }
 }

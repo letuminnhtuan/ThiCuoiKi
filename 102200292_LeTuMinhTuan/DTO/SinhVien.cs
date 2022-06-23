@@ -17,6 +17,7 @@ namespace _102200292_LeTuMinhTuan.DTO
         public double DiemCuoiKi { get; set; }
         public double TongKet { get; set; }
         public DateTime NgayThi { get; set; }
-        public List<string> MaHocPhan { get; set; }
+        public string MaHocPhan { get; set; }
+        public string TenHocPhan { get; set; }
     }
 }

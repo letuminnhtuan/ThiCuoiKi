@@ -38,21 +38,23 @@ namespace _102200292_LeTuMinhTuan.BLL
         public List<SinhVien> GetDSSV(string MaHocPhan, string txtSearch)
         {
             List<SinhVien> data = new List<SinhVien>();
-            var list = db.SinhViens.Select(p => p);
-            if (!MaHocPhan.Equals("All")) list = list.Where(p => p.HocPhans.Where(c => c.MaHocPhan.Equals(MaHocPhan)).Any());
-            if (!txtSearch.Equals("")) list = list.Where(p => p.TenSinhVien.Contains(txtSearch) || p.MaSinhVien.Contains(txtSearch));
-            foreach(tSinhVien i in list)
+            var list = db.SV_HPs.Select(p => p);
+            if (!MaHocPhan.Equals("All")) list = list.Where(p => p.MaHocPhan.Equals(MaHocPhan));
+            if (!txtSearch.Equals("")) list = list.Where(p => p.SinhVien.TenSinhVien.Contains(txtSearch) || p.MaSinhVien.Contains(txtSearch));
+            foreach(tSV_HP i in list)
             {
                 SinhVien sv = new SinhVien
                 {
                     MaSinhVien = i.MaSinhVien,
-                    TenSinhVien = i.TenSinhVien,
-                    DiemBaiTap = i.DiemBaiTap,
-                    DiemGiuaKi = i.DiemGiuaKi,
-                    DiemCuoiKi = i.DiemCuoiKi,
-                    LopSinhHoat = i.LopSinhHoat,
-                    GioiTinh = i.GioiTinh,
-                    NgayThi = i.NgayThi,
+                    TenSinhVien = i.SinhVien.TenSinhVien,
+                    DiemBaiTap = i.SinhVien.DiemBaiTap,
+                    DiemGiuaKi = i.SinhVien.DiemGiuaKi,
+                    DiemCuoiKi = i.SinhVien.DiemCuoiKi,
+                    LopSinhHoat = i.SinhVien.LopSinhHoat,
+                    GioiTinh = i.SinhVien.GioiTinh,
+                    NgayThi = i.SinhVien.NgayThi,
+                    MaHocPhan = i.MaHocPhan,
+                    TenHocPhan = i.HocPhan.TenHocPhan,
                 };
                 sv.TongKet = sv.DiemBaiTap * 0.2 + sv.DiemGiuaKi * 0.2 + sv.DiemCuoiKi * 0.3;
                 data.Add(sv);
