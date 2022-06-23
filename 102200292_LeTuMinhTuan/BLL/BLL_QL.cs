@@ -133,7 +133,8 @@ namespace _102200292_LeTuMinhTuan.BLL
             };
             if(db.SinhViens.Find(data.MaSinhVien) == null) db.SinhViens.Add(sv);
             //db.SinhViens.Add(sv);
-            if(db.SV_HPs.Where(p => p.MaSinhVien.Equals(data.MaSinhVien) && p.MaHocPhan.Equals(data.MaHocPhan)).FirstOrDefault() == null) db.SV_HPs.Add(sv_hp);
+            var i = db.SV_HPs.Where(p => p.MaSinhVien.Equals(data.MaSinhVien) && p.MaHocPhan.Equals(data.MaHocPhan)).FirstOrDefault();
+            if (i == null) db.SV_HPs.Add(sv_hp);
             db.SaveChanges();
         }
         public void UpdateSV(SinhVien data)
