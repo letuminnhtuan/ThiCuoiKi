@@ -16,22 +16,20 @@ namespace _102200292_LeTuMinhTuan.GUI
     {
         public delegate void Del();
         public Del d;
-        public string MaSinhVien { get; set; }
-        public string MaHocPhan { get; set; }
-        public DetailForm(string MaSinhVien, string MaHocPhan)
+        public int ID { get; set; }
+        public DetailForm(int ID)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             this.cbbHocPhan.Items.AddRange(BLL_QL.Instance.GetCBBHocPhan().ToArray());
-            this.MaSinhVien = MaSinhVien;
-            this.MaHocPhan = MaHocPhan;
+            this.ID = ID;
             SetGUI();
         }
         public void SetGUI()
         {
-            if(BLL_QL.Instance.GetSinhVien(this.MaSinhVien, this.MaHocPhan) != null)
+            if(BLL_QL.Instance.GetSinhVien(this.ID) != null)
             {
-                SinhVien data = BLL_QL.Instance.GetSinhVien(this.MaSinhVien, this.MaHocPhan);
+                SinhVien data = BLL_QL.Instance.GetSinhVien(this.ID);
                 this.txtMSSV.Text = data.MaSinhVien;
                 this.txtMSSV.Enabled = false;
                 this.txtTen.Text = data.TenSinhVien;
@@ -57,6 +55,7 @@ namespace _102200292_LeTuMinhTuan.GUI
         {
             SinhVien sv = new SinhVien
             {
+                ID = this.ID,
                 MaSinhVien = this.txtMSSV.Text,
                 TenSinhVien = this.txtTen.Text,
                 LopSinhHoat = this.cbbLopSH.Text,

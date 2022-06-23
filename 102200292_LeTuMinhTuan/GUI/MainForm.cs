@@ -30,7 +30,7 @@ namespace _102200292_LeTuMinhTuan.GUI
                 string txtSearch = this.txtSearch.Text;
                 foreach(SinhVien i in BLL_QL.Instance.GetDSSV(MaHocPhan, txtSearch))
                 {
-                    this.dataSV.Rows.Add(i.MaSinhVien, i.MaHocPhan, i.TenSinhVien, i.LopSinhHoat, i.TenHocPhan, i.DiemBaiTap, i.DiemGiuaKi, i.DiemCuoiKi, i.TongKet, i.NgayThi);
+                    this.dataSV.Rows.Add(i.ID, i.TenSinhVien, i.LopSinhHoat, i.TenHocPhan, i.DiemBaiTap, i.DiemGiuaKi, i.DiemCuoiKi, i.TongKet, i.NgayThi);
                 }
             }
         }
@@ -42,7 +42,7 @@ namespace _102200292_LeTuMinhTuan.GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DetailForm f = new DetailForm("", "");
+            DetailForm f = new DetailForm(0);
             f.d = new DetailForm.Del(LoadData);
             f.Show();
         }
@@ -51,9 +51,8 @@ namespace _102200292_LeTuMinhTuan.GUI
         {
             if(this.dataSV.SelectedRows.Count == 1)
             {
-                string MaSinhVien = this.dataSV.SelectedRows[0].Cells["colIDSV"].Value.ToString();
-                string MaHocPhan = this.dataSV.SelectedRows[0].Cells["colIDHP"].Value.ToString();
-                DetailForm f = new DetailForm(MaSinhVien, MaHocPhan);
+                int ID = Convert.ToInt32(this.dataSV.SelectedRows[0].Cells["colID"].Value.ToString());
+                DetailForm f = new DetailForm(ID);
                 f.d = new DetailForm.Del(LoadData);
                 f.Show();
             }
@@ -63,9 +62,8 @@ namespace _102200292_LeTuMinhTuan.GUI
         {
             if (this.dataSV.SelectedRows.Count == 1)
             {
-                string MaSinhVien = this.dataSV.SelectedRows[0].Cells["colIDSV"].Value.ToString();
-                string MaHocPhan = this.dataSV.SelectedRows[0].Cells["colIDHP"].Value.ToString();
-                BLL_QL.Instance.DeleteSV(MaSinhVien, MaHocPhan);
+                int ID = Convert.ToInt32(this.dataSV.SelectedRows[0].Cells["colID"].Value.ToString());
+                BLL_QL.Instance.DeleteSV(ID);
                 LoadData();
             }
         }
@@ -80,7 +78,7 @@ namespace _102200292_LeTuMinhTuan.GUI
                 string txtSearch = this.txtSearch.Text;
                 foreach (SinhVien i in BLL_QL.Instance.SortDSSV(txtSort, MaHocPhan, txtSearch))
                 {
-                    this.dataSV.Rows.Add(i.MaSinhVien, i.MaHocPhan, i.TenSinhVien, i.LopSinhHoat, i.TenHocPhan, i.DiemBaiTap, i.DiemGiuaKi, i.DiemCuoiKi, i.TongKet, i.NgayThi);
+                    this.dataSV.Rows.Add(i.ID, i.TenSinhVien, i.LopSinhHoat, i.TenHocPhan, i.DiemBaiTap, i.DiemGiuaKi, i.DiemCuoiKi, i.TongKet, i.NgayThi);
                 }
             }
         }

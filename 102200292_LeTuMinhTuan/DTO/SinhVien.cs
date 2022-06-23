@@ -8,6 +8,7 @@ namespace _102200292_LeTuMinhTuan.DTO
 {
     public class SinhVien
     {
+        public int ID { get; set; }
         public string MaSinhVien { get; set; }
         public string TenSinhVien { get; set; }
         public string LopSinhHoat { get; set; }
