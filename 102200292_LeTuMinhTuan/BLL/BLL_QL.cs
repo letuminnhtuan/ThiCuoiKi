@@ -29,7 +29,7 @@ namespace _102200292_LeTuMinhTuan.BLL
         {
             var list = db.HocPhans;
             List<CBBItem> data = new List<CBBItem>();
-            foreach(tHocPhan i in list)
+            foreach (tHocPhan i in list)
             {
                 data.Add(new CBBItem { Key = i.MaHocPhan, Value = i.TenHocPhan });
             }
@@ -41,7 +41,7 @@ namespace _102200292_LeTuMinhTuan.BLL
             var list = db.SV_HPs.Select(p => p);
             if (!MaHocPhan.Equals("All")) list = list.Where(p => p.MaHocPhan.Equals(MaHocPhan));
             if (!txtSearch.Equals("")) list = list.Where(p => p.SinhVien.TenSinhVien.Contains(txtSearch) || p.MaSinhVien.Contains(txtSearch));
-            foreach(tSV_HP i in list)
+            foreach (tSV_HP i in list)
             {
                 SinhVien sv = new SinhVien
                 {
@@ -65,7 +65,7 @@ namespace _102200292_LeTuMinhTuan.BLL
         {
             var data = db.SV_HPs.Where(p => p.MaSinhVien.Equals(MaSinhVien) && p.MaHocPhan.Equals(MaHocPhan)).FirstOrDefault();
             SinhVien sv = null;
-            if(data != null)
+            if (data != null)
             {
                 sv = new SinhVien
                 {
@@ -107,7 +107,8 @@ namespace _102200292_LeTuMinhTuan.BLL
                 DiemCuoiKi = data.DiemCuoiKi,
                 NgayThi = data.NgayThi,
             };
-            if(db.SinhViens.Find(data.MaSinhVien) == null) db.SinhViens.Add(sv);
+            //if(db.SinhViens.Find(data.MaSinhVien) == null) db.SinhViens.Add(sv);
+            db.SinhViens.Add(sv);
             db.SV_HPs.Add(sv_hp);
             db.SaveChanges();
         }
@@ -117,16 +118,12 @@ namespace _102200292_LeTuMinhTuan.BLL
             SV.TenSinhVien = data.TenSinhVien;
             SV.GioiTinh = data.GioiTinh;
             SV.LopSinhHoat = data.LopSinhHoat;
-            db.SaveChanges();
             var SV_HP = db.SV_HPs.Where(p => p.MaSinhVien.Equals(data.MaSinhVien) && p.MaHocPhan.Equals(data.MaHocPhan)).FirstOrDefault();
-            if(SV_HP != null)
-            {
-                SV_HP.DiemBaiTap = data.DiemBaiTap;
-                SV_HP.DiemGiuaKi = data.DiemGiuaKi;
-                SV_HP.DiemCuoiKi = data.DiemCuoiKi;
-                SV_HP.NgayThi = data.NgayThi;
-                SV_HP.MaHocPhan = data.MaHocPhan;
-            }
+            SV_HP.DiemBaiTap = data.DiemBaiTap;
+            SV_HP.DiemGiuaKi = data.DiemGiuaKi;
+            SV_HP.DiemCuoiKi = data.DiemCuoiKi;
+            SV_HP.NgayThi = data.NgayThi;
+            SV_HP.MaHocPhan = data.MaHocPhan;
             db.SaveChanges();
         }
         public void DeleteSV(string MaSinhVien, string MaHocPhan)
@@ -139,7 +136,7 @@ namespace _102200292_LeTuMinhTuan.BLL
         {
             List<SinhVien> SinhViens = GetDSSV(MaHocPhan, txtSearch);
             if (txtSort.Equals("Diem tong ket")) SinhViens.Sort(delegate (SinhVien sv1, SinhVien sv2) { return sv1.TongKet.CompareTo(sv2.TongKet); });
-            else if(txtSort.Equals("TenSV")) SinhViens.Sort(delegate (SinhVien sv1, SinhVien sv2) { return sv1.TenSinhVien.CompareTo(sv2.TenSinhVien); });
+            else if (txtSort.Equals("TenSV")) SinhViens.Sort(delegate (SinhVien sv1, SinhVien sv2) { return sv1.TenSinhVien.CompareTo(sv2.TenSinhVien); });
             return SinhViens;
         }
     }
