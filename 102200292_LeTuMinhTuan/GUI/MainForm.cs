@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _102200292_LeTuMinhTuan.GUI
 {
-    public partial class fMain : Form
+    public partial class MainForm : Form
     {
-        public fMain()
+        public MainForm()
         {
             InitializeComponent();
         }
