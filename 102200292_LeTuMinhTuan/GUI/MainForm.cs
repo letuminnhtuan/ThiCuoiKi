@@ -30,7 +30,7 @@ namespace _102200292_LeTuMinhTuan.GUI
                 string txtSearch = this.txtSearch.Text;
                 foreach(SinhVien i in BLL_QL.Instance.GetDSSV(MaHocPhan, txtSearch))
                 {
-                    this.dataSV.Rows.Add(i.MaSinhVien, i.TenSinhVien, i.LopSinhHoat, i.TenHocPhan, i.DiemBaiTap, i.DiemGiuaKi, i.DiemCuoiKi, i.TongKet, i.NgayThi);
+                    this.dataSV.Rows.Add(i.MaSinhVien, i.MaHocPhan, i.TenSinhVien, i.LopSinhHoat, i.TenHocPhan, i.DiemBaiTap, i.DiemGiuaKi, i.DiemCuoiKi, i.TongKet, i.NgayThi);
                 }
             }
         }

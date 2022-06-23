@@ -39,7 +39,8 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.btnDel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cbbSort = new System.Windows.Forms.ComboBox();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLopSH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,7 +84,8 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.dataSV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataSV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
+            this.colIDSV,
+            this.colIDHP,
             this.colTenSV,
             this.colLopSH,
             this.colTenHP,
@@ -160,12 +162,19 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.cbbSort.Size = new System.Drawing.Size(221, 30);
             this.cbbSort.TabIndex = 9;
             // 
-            // colID
+            // colIDSV
             // 
-            this.colID.HeaderText = "ID";
-            this.colID.MinimumWidth = 6;
-            this.colID.Name = "colID";
-            this.colID.Visible = false;
+            this.colIDSV.HeaderText = "ID";
+            this.colIDSV.MinimumWidth = 6;
+            this.colIDSV.Name = "colIDSV";
+            this.colIDSV.Visible = false;
+            // 
+            // colIDHP
+            // 
+            this.colIDHP.HeaderText = "HP";
+            this.colIDHP.MinimumWidth = 6;
+            this.colIDHP.Name = "colIDHP";
+            this.colIDHP.Visible = false;
             // 
             // colTenSV
             // 
@@ -250,7 +259,8 @@ namespace _102200292_LeTuMinhTuan.GUI
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.ComboBox cbbSort;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDHP;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLopSH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenHP;

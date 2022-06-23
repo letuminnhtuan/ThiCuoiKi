@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _102200292_LeTuMinhTuan.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace _102200292_LeTuMinhTuan.GUI
         public DetailForm()
         {
             InitializeComponent();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            SinhVien sv = new SinhVien
+            {
+                MaSinhVien = this.txtMSSV.Text,
+                TenSinhVien = this.txtTen.Text,
+                LopSinhHoat = this.cbbLopSH.Text,
+                MaHocPhan = ((CBBItem)this.cbbHocPhan.SelectedItem).Key,
+                TenHocPhan = ((CBBItem)this.cbbHocPhan.SelectedItem).Value,
+                GioiTinh = this.radioMale.Checked,
+                DiemBaiTap = Convert.ToDouble(this.txtDiemBT.Text),
+                DiemGiuaKi = Convert.ToDouble(this.txtDiemBT.Text),
+            }
         }
     }
 }
