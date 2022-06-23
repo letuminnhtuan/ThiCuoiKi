@@ -122,6 +122,7 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSort
             // 
@@ -152,6 +153,7 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // cbbSort
             // 

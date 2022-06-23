@@ -75,6 +75,11 @@ namespace _102200292_LeTuMinhTuan.GUI
             // 
             this.cbbLopSH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbLopSH.FormattingEnabled = true;
+            this.cbbLopSH.Items.AddRange(new object[] {
+            "20T",
+            "19T",
+            "21T",
+            "18T"});
             this.cbbLopSH.Location = new System.Drawing.Point(144, 160);
             this.cbbLopSH.Name = "cbbLopSH";
             this.cbbLopSH.Size = new System.Drawing.Size(232, 30);
@@ -273,6 +278,7 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.btnCancle.TabIndex = 20;
             this.btnCancle.Text = "Cancle";
             this.btnCancle.UseVisualStyleBackColor = true;
+            this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
             // DetailForm
             // 

@@ -84,7 +84,7 @@ namespace _102200292_LeTuMinhTuan.BLL
             }
             return sv;
         }
-        public void AddUpdateSSV(SinhVien data)
+        public void AddUpdateSV(SinhVien data)
         {
             if (GetSinhVien(data.MaSinhVien, data.MaHocPhan) != null) UpdateSV(data);
             else AddSV(data);

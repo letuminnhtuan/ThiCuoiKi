@@ -25,7 +25,7 @@ namespace _102200292_LeTuMinhTuan.GUI
             this.cbbHocPhan.Items.AddRange(BLL_QL.Instance.GetCBBHocPhan().ToArray());
             this.MaSinhVien = MaSinhVien;
             this.MaHocPhan = MaHocPhan;
-
+            SetGUI();
         }
         public void SetGUI()
         {
@@ -33,6 +33,7 @@ namespace _102200292_LeTuMinhTuan.GUI
             {
                 SinhVien data = BLL_QL.Instance.GetSinhVien(this.MaSinhVien, this.MaHocPhan);
                 this.txtMSSV.Text = data.MaSinhVien;
+                this.txtMSSV.Enabled = false;
                 this.txtTen.Text = data.TenSinhVien;
                 this.cbbLopSH.Text = data.LopSinhHoat;
                 this.dateTimePicker1.Value = data.NgayThi;
@@ -41,7 +42,7 @@ namespace _102200292_LeTuMinhTuan.GUI
                 this.txtDiemCK.Text = data.DiemCuoiKi.ToString();
                 this.txtTongKet.Text = data.TongKet.ToString();
                 if (data.GioiTinh) this.radioMale.Checked = true;
-                else this.radioFemale.Checked = false;
+                else this.radioFemale.Checked = true;
                 foreach(CBBItem i in this.cbbHocPhan.Items)
                 {
                     if (i.Key.Equals(data.MaHocPhan))
@@ -68,7 +69,13 @@ namespace _102200292_LeTuMinhTuan.GUI
                 NgayThi = this.dateTimePicker1.Value,
                 TongKet = Convert.ToDouble(this.txtTongKet.Text),
             };
+            BLL_QL.Instance.AddUpdateSV(sv);
+            d();
+        }
 
+        private void btnCancle_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

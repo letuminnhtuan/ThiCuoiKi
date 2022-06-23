@@ -39,5 +39,24 @@ namespace _102200292_LeTuMinhTuan.GUI
         {
             LoadData();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            DetailForm f = new DetailForm("", "");
+            f.d = new DetailForm.Del(LoadData);
+            f.Show();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if(this.dataSV.SelectedRows.Count == 1)
+            {
+                string MaSinhVien = this.dataSV.SelectedRows[0].Cells["colIDSV"].Value.ToString();
+                string MaHocPhan = this.dataSV.SelectedRows[0].Cells["colIDHP"].Value.ToString();
+                DetailForm f = new DetailForm(MaSinhVien, MaHocPhan);
+                f.d = new DetailForm.Del(LoadData);
+                f.Show();
+            }
+        }
     }
 }
