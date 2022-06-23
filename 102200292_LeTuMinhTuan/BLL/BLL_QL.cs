@@ -47,12 +47,12 @@ namespace _102200292_LeTuMinhTuan.BLL
                 {
                     MaSinhVien = i.MaSinhVien,
                     TenSinhVien = i.SinhVien.TenSinhVien,
-                    DiemBaiTap = i.SinhVien.DiemBaiTap,
-                    DiemGiuaKi = i.SinhVien.DiemGiuaKi,
-                    DiemCuoiKi = i.SinhVien.DiemCuoiKi,
+                    DiemBaiTap = i.DiemBaiTap,
+                    DiemGiuaKi = i.DiemGiuaKi,
+                    DiemCuoiKi = i.DiemCuoiKi,
                     LopSinhHoat = i.SinhVien.LopSinhHoat,
                     GioiTinh = i.SinhVien.GioiTinh,
-                    NgayThi = i.SinhVien.NgayThi,
+                    NgayThi = i.NgayThi,
                     MaHocPhan = i.MaHocPhan,
                     TenHocPhan = i.HocPhan.TenHocPhan,
                 };

@@ -18,17 +18,17 @@ namespace _102200292_LeTuMinhTuan.DAL
             context.HocPhans.Add(new tHocPhan { MaHocPhan = "MMT", TenHocPhan = "Mang may tinh" });
             context.HocPhans.Add(new tHocPhan { MaHocPhan = "CNPM", TenHocPhan = "Cong nghe phan mem" });
 
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "102", TenSinhVien = "Nguyen Van A", GioiTinh = true, DiemBaiTap = 7, DiemGiuaKi = 7, DiemCuoiKi = 7, LopSinhHoat = "20T", NgayThi = new DateTime(2022, 6, 22)});
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "103", TenSinhVien = "Nguyen Van B", GioiTinh = false, DiemBaiTap = 7, DiemGiuaKi = 5, DiemCuoiKi = 8, LopSinhHoat = "20T", NgayThi = new DateTime(2022, 6, 12) });
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "104", TenSinhVien = "Tran Van A", GioiTinh = true, DiemBaiTap = 6, DiemGiuaKi = 8, DiemCuoiKi = 7, LopSinhHoat = "19T", NgayThi = new DateTime(2022, 6, 3) });
-            context.SinhViens.Add(new tSinhVien { MaSinhVien = "105", TenSinhVien = "Tran Van B", GioiTinh = true, DiemBaiTap = 8, DiemGiuaKi = 9, DiemCuoiKi = 10, LopSinhHoat = "18T", NgayThi = new DateTime(2022, 5, 5) });
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "102", TenSinhVien = "Nguyen Van A", GioiTinh = true});
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "103", TenSinhVien = "Nguyen Van B", GioiTinh = false);
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "104", TenSinhVien = "Tran Van A", GioiTinh = true});
+            context.SinhViens.Add(new tSinhVien { MaSinhVien = "105", TenSinhVien = "Tran Van B", GioiTinh = true});
 
-            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "JV", MaSinhVien = "102"});
-            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "JV", MaSinhVien = "103" });
-            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "NET", MaSinhVien = "102" });
-            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "XSTK", MaSinhVien = "102" });
-            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "MMT", MaSinhVien = "104" });
-            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "MMT", MaSinhVien = "103" });
+            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "JV", MaSinhVien = "102", DiemBaiTap = 7, DiemGiuaKi = 7, DiemCuoiKi = 7, NgayThi = new DateTime(2022, 6, 22) });
+            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "JV", MaSinhVien = "103", DiemBaiTap = 7, DiemGiuaKi = 5, DiemCuoiKi = 8, NgayThi = new DateTime(2022, 6, 12) });
+            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "NET", MaSinhVien = "102", DiemBaiTap = 7, DiemGiuaKi = 5, DiemCuoiKi = 8, NgayThi = new DateTime(2022, 6, 12) });
+            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "XSTK", MaSinhVien = "102", DiemBaiTap = 7, DiemGiuaKi = 5, DiemCuoiKi = 8, NgayThi = new DateTime(2022, 6, 12) });
+            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "MMT", MaSinhVien = "104", DiemBaiTap = 7, DiemGiuaKi = 5, DiemCuoiKi = 8, NgayThi = new DateTime(2022, 6, 12) });
+            context.SV_HPs.Add(new tSV_HP { MaHocPhan = "MMT", MaSinhVien = "103", DiemBaiTap = 7, DiemGiuaKi = 5, DiemCuoiKi = 8, NgayThi = new DateTime(2022, 6, 12) });
         }
     }
 }

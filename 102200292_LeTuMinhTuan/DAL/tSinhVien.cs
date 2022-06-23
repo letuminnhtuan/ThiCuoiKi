@@ -16,10 +16,6 @@ namespace _102200292_LeTuMinhTuan.DAL
         public string TenSinhVien { get; set; }
         public string LopSinhHoat { get; set; }
         public bool GioiTinh { get; set; }
-        public double DiemBaiTap { get; set; }
-        public double DiemGiuaKi { get; set; }
-        public double DiemCuoiKi { get; set; }
-        public DateTime NgayThi { get; set; }
 
         public tSinhVien()
         {
